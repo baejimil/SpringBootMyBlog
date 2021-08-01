@@ -1,6 +1,5 @@
 package com.bjh.blog.test;
 
-import lombok.Builder;
 
 public class Member {
 	
