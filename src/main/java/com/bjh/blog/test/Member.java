@@ -1,5 +1,7 @@
 package com.bjh.blog.test;
 
+import lombok.Builder;
+
 public class Member {
 	
 	private int id;
@@ -7,9 +9,14 @@ public class Member {
 	private String password;
 	private String email;
 	
-	
 	public Member(int id, String username, String password, String email) {
 		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+	}
+	
+	public Member(String username, String password, String email) {
 		this.username = username;
 		this.password = password;
 		this.email = email;

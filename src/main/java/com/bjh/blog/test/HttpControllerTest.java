@@ -13,6 +13,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HttpControllerTest {
 	
+	public static final String TAG = "HttpControllerTest: ";
+	
+	@GetMapping("/http/lombok")
+	public String lombokTest() {
+		Member m = new Member("baejimil", "1234", "email");
+		System.out.println(TAG+"getter: "+m.getUsername());
+		m.setUsername("bjh");
+		System.out.println(TAG+"setter: "+m.getUsername());
+		return "lombok test complete";
+	}
+	
+	
 	// 인터넷 브라우저 요청은 무조건 GET 요청밖에 할 수 없다!!!
 	// https://localhost:8080/http/get
 	@GetMapping("/http/get")
