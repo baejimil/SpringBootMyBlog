@@ -18,10 +18,5 @@ public class UserService {
 	public void 회원가입(User user) {
 			userRepository.save(user);
 	}
-	
-	@Transactional(readOnly = true) // 하나의 트랜잭션 안에 여러개의 서비스가 들어갈 수 있다. 
-	public User 로그인(User user) {
-		return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
-		
-	}
+
 }
