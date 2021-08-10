@@ -1,9 +1,9 @@
 package com.bjh.blog.service;
 
-import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.bjh.blog.model.User;
 import com.bjh.blog.repository.UserRepository;
@@ -15,14 +15,13 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	@Transactional // 하나의 트랜잭션 안에 여러개의 서비스가 들어갈 수 있다. 
-	public int 회원가입(User user) {
-		try {
+	public void 회원가입(User user) {
 			userRepository.save(user);
-			return 1;
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("UserService: 회원가입(): "+e.getMessage());
-		}
-		return -1;
+	}
+	
+	@Transactional(readOnly = true) // 하나의 트랜잭션 안에 여러개의 서비스가 들어갈 수 있다. 
+	public User 로그인(User user) {
+		return userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		
 	}
 }
