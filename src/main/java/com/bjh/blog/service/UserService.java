@@ -17,12 +17,12 @@ public class UserService {
 	private UserRepository userRepository;
 	
 	@Autowired
-	private BCryptPasswordEncoder encode;
+	private BCryptPasswordEncoder encoder;
 	
 	@Transactional // 하나의 트랜잭션 안에 여러개의 서비스가 들어갈 수 있다. 
 	public void 회원가입(User user) {
 		String rawPassword = user.getPassword();
-		String encPassword = encode.encode(rawPassword);
+		String encPassword = encoder.encode(rawPassword);
 		user.setPassword(encPassword);
 		user.setRole(RoleType.USER);
 		userRepository.save(user);
