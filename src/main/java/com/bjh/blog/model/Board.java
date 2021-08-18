@@ -37,7 +37,6 @@ public class Board {
 	@Lob //	대용량 데이터 시 사용
 	private String content;
 	
-	@ColumnDefault("0")
 	private int count;
 	
 	@ManyToOne //User랑 연관관계 맺어주는 
