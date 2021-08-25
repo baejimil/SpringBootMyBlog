@@ -7,9 +7,11 @@
 			<label for="username">Username</label> <input type="text" name="username" class="form-control" placeholder="Enter username" id="username">
 		</div>
 		<div class="form-group">
-			<label for="password">Password</label> <input type="password"name="password" class="form-control" placeholder="Enter password" id="password">
+			<label for="password">Password</label> <input type="password" name="password" class="form-control" placeholder="Enter password" id="password">
 		</div>
 		<button id="btn-login" class="btn btn-primary">로그인</button>
+		<a href="https://kauth.kakao.com/oauth/authorize?client_id=64032b6d823027c0e0b4676ded5b3bec&redirect_uri=http://localhost:8080/auth/kakao/callback&response_type=code"><img height="38px"
+			src="/image/kakao_login_button.png" /></a>
 	</form>
 
 </div>
