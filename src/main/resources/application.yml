@@ -6,7 +6,7 @@ server:
       charset: UTF-8
       enabled: true
       force: true
-    
+
 spring:
   mvc:
     view:
@@ -16,7 +16,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul
-    username: root
+    username: bjh
     password: 0487078q
     
   jpa:
@@ -33,3 +33,6 @@ spring:
   jackson:
     serialization:
       fail-on-empty-beans: false
+      
+bjh:
+  key: 0487078q
